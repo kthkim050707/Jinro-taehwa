@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        html, body {
+            padding: 0;
+            margin: 0;
+        }
+        .side_toggle_btn{
+            padding: 19px 25px 13px 0;
+        }
+        
+        .side_toggle_btn:before{
+            content: ">";
+            display: inline-block;
+            width: 95px; /*추후에 제목 변경 후 .side_list width와 맞도록 조정 필요함*/
+            line-height: 50px;
+            text-align: center;
+            font-size: 24px;
+        }
+        .side_input:checked + .side_toggle_btn:before{
+            content: "<";
+        }
+        .side_input:checked ~ .side_list {
+            left: 0;
+        }
+        .side_list{
+            position: absolute;
+            transition: 0.3s ease-in;
+            left: -201px;
+            top: 50px;
+            bottom: 0;
+            font-size: 17px;
+            width: 200px;
+            border-right: 1px solid black;
+            border-top: 1px solid black;
+        }
+        .side_link{
+            display: block;
+            text-align: center;
+            padding: 33px 0;
+        }
+        .blind{
+            display: none;
+        }
+        a{
+            text-decoration: none;
+        }
+        .title{
+            padding-left: 20px;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JJab-Ro_School</title>
+</head>
+<body>
+<header>
+        <input type="checkbox" id="side_btn" class="side_input blind">
+        <a href="starting.html"class="title">JJab-Ro_School</a>
+        <label for="side_btn" class="side_toggle_btn"></label>
+        <div class="side_list">
+            <a href="https://sunduck.hs.kr/" class="side_link">우리 학교</a>
+            <a href="#" class="side_link">시간표</a>
+            <a href="#" class="side_link">수행평가</a>
+            <a href="#" class="side_link">급식</a>
+            <a href="#" class="side_link">대학교 입시</a>
+            <a href="https://hcs.eduro.go.kr/" class="side_link">자가진단</a>
+            <a href="#" class="side_link">문제집 정보</a>
+        </div>
+</header>
+</body>
+</html>
